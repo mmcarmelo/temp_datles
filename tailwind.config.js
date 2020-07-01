@@ -7,8 +7,8 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      display: ['Gilroy', 'sans-serif'],
-      body: ['Graphik', 'sans-serif'],
+      display: ['Montserrat', 'sans-serif'],
+      body: ['Montserrat', 'sans-serif'],
     },
     borderWidth: {
       default: '1px',
@@ -30,13 +30,14 @@ module.exports = {
         cyan: '#9cdbff',
         login:  '#13131A',
         bluebtn: '#1E75FF',
-        dark: '#1C1C24',
+        dark: '#44444F',
         green: '#3FC75E',
+        grey1: '#44444F',
       },
       spacing: {
         px: '1px',
         '0': '0',
-        '1': '0.25rem',
+        '1': '0.2rem',
         '2': '0.5rem',
         '3': '0.75rem',
         '4': '1rem',

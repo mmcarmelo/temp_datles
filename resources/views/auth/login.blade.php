@@ -2,6 +2,15 @@
 
 @section('content')
 
+<div class="">
+
+    <div class="">
+
+    </div>
+
+</div>
+
+
 <div class="absolute top-0 w-full h-full bg-login">
     <div class="container mx-auto px-4 h-full">
         <div class="flex content-center items-center justify-center h-full">
@@ -9,16 +18,17 @@
                 <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
                     <div class="flex-auto bg-dark px-4 lg:px-10 py-10 pt-0 rounded-xl">
 
-                        <div class="relative w-full mb-3">
-                            <h4 class="text-white">Login to your acount</h4>
+                        <div class="flex-auto w-full text-center">
+                            <h4 class="text-white text-xl font-medium tracking-wider mt-4 text-uppercase">
+                                clients login
+                            </h4>
                         </div>
-
 
 
                         <form method="POST" action="{{ route('login') }}" class="mt-12">
                             @csrf
 
-                            <div class="relative w-full mb-3">
+                            <div class="relative w-full mb-3 font-serif">
                                 
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -30,9 +40,9 @@
 
                             </div>
 
-                            <div class="relative w-full mb-3">
+                            <div class="relative w-full mb-3 font-serif">
                                 
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password text-dark">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -42,33 +52,40 @@
 
                             </div>
 
-                            <div class="relative w-full mb-3">
-                                <label>
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <div class="relative w-full mb-3 font-serif mt-4">
+                                
+                                    <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label text-white" for="remember">
+                                    <label class="text-white text-uppercase text-sm" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
-                                </label>
+                                
                             </div>
 
-                            <div class="text-center mt-6">
-                                <button type="submit" class="bg-bluebtn text-white rounded-lg">
-                                    {{ __('Login') }}
+                            <div class="text-center mt-6 font-serif w-full">
+                                <button type="submit" class="bg-bluebtn text-white rounded-lg text-uppercase py-2 px-32">
+                                    {{ __('Sign In') }}
                                 </button>
+                                
+                                <br>
+                                <div class="bg-grey1 w-full h-1 rounded-xl mt-4"></div>
+                                <br>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                
+                                    <a class="text-white text-sm font-medium tracking-wider">
+                                        {{ __("Can't Login?") }}
                                     </a>
-                                @endif
+                                
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="flex flex-wrap">
-                    <div class="w-1/2 text-right"><a href="#pablo" class="text-white"><small>Privacy policy</small></a></div>
-                    <div class="w-1/2 text-right"><a href="#pablo" class="text-white"><small>Terms of use</small></a></div>
+                <div class="flex ">
+                    <div class="w-full text-center">
+                        <div class="text-white text-uppercase text-sm">
+                            Contact: support@datles.com
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
