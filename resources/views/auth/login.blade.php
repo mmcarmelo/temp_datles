@@ -1,20 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+<div class="absolute top-0 w-full h-full bg-login">
+    <div class="container mx-auto px-4 h-full">
+        <div class="flex content-center items-center justify-center h-full">
+            <div class="w-full lg:w-4/12 px-4 pt-32">
+                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
+                    <div class="flex-auto bg-dark px-4 lg:px-10 py-10 pt-0 rounded-xl">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <div class="relative w-full mb-3">
+                            <h4 class="text-white">Login to your acount</h4>
+                        </div>
 
-                            <div class="col-md-6">
+
+
+                        <form method="POST" action="{{ route('login') }}" class="mt-12">
+                            @csrf
+
+                            <div class="relative w-full mb-3">
+                                
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -22,13 +27,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="relative w-full mb-3">
+                                
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -36,24 +39,21 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
+                            </div>
+
+                            <div class="relative w-full mb-3">
+                                <label>
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label text-white" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
-                                </div>
+                                </label>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="text-center mt-6">
+                                <button type="submit" class="bg-bluebtn text-white rounded-lg">
                                     {{ __('Login') }}
                                 </button>
 
@@ -63,11 +63,16 @@
                                     </a>
                                 @endif
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                </div>
+                <div class="flex flex-wrap">
+                    <div class="w-1/2 text-right"><a href="#pablo" class="text-white"><small>Privacy policy</small></a></div>
+                    <div class="w-1/2 text-right"><a href="#pablo" class="text-white"><small>Terms of use</small></a></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+    
 @endsection
